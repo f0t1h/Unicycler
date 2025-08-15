@@ -28,7 +28,7 @@ import subprocess
 import multiprocessing
 import fnmatch
 import importlib.util
-from unicycler.misc import get_ascii_art
+from unicycler_hyplas_modified.misc import get_ascii_art
 
 # Install setuptools if not already present.
 if not importlib.util.find_spec("setuptools"):
@@ -45,7 +45,7 @@ if script_dir != os.getcwd():
 
 # Get the program version from another file.
 __version__ = '0.0.0'
-exec(open('unicycler/version.py').read())
+exec(open('unicycler_hyplas_modified/version.py').read())
 
 with open('README.md', 'rb') as readme:
     LONG_DESCRIPTION = readme.read().decode()
@@ -120,8 +120,8 @@ class UnicyclerInstall(install):
             # Copy non-Python stuff to the installation directory.
             shutil.copyfile(cpp_code, os.path.join(self.install_lib, 'unicycler',
                                                    'cpp_functions.so'))
-            gene_data_source_dir = os.path.join('unicycler', 'gene_data')
-            gene_data_dest_dir = os.path.join(self.install_lib, 'unicycler', 'gene_data')
+            gene_data_source_dir = os.path.join('unicycler_hyplas_modified', 'gene_data')
+            gene_data_dest_dir = os.path.join(self.install_lib, 'unicycler_hyplas_modified', 'gene_data')
             if not os.path.exists(gene_data_dest_dir):
                 os.makedirs(gene_data_dest_dir)
             shutil.copyfile(os.path.join(gene_data_source_dir, 'start_genes.fasta'),
@@ -134,11 +134,11 @@ class UnicyclerInstall(install):
             print('Unicycler is installed!')
             print('')
             print('Example commands:')
-            print('  unicycler --help')
-            print('  unicycler --help_all')
-            print('  unicycler -1 short_reads_1.fastq.gz -2 short_reads_2.fastq.gz '
+            print('  unicycler_hyplas_modified --help')
+            print('  unicycler_hyplas_modified --help_all')
+            print('  unicycler_hyplas_modified -1 short_reads_1.fastq.gz -2 short_reads_2.fastq.gz '
                   '-o path/to/output_dir')
-            print('  unicycler -1 short_reads_1.fastq.gz -2 short_reads_2.fastq.gz '
+            print('  unicycler_hyplas_modified -1 short_reads_1.fastq.gz -2 short_reads_2.fastq.gz '
                   '-l long_reads.fastq.gz -o path/to/output_dir')
             print('')
 

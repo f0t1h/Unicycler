@@ -67,7 +67,7 @@ CXXFLAGS    ?= -Wall -Wextra -pedantic -mtune=native
 
 
 # These flags are required for the build to work.
-FLAGS        = -std=c++14 -Iunicycler/include -fPIC
+FLAGS        = -std=c++14 -Iunicycler_hyplas_modified/include -fPIC
 LDFLAGS      = -shared -lz
 
 
@@ -82,10 +82,10 @@ DEBUGFLAGS   = -DSEQAN_ENABLE_DEBUG=1 -g
 RELEASEFLAGS = -O3 -DNDEBUG
 
 
-TARGET       = unicycler/cpp_functions.so
+TARGET       = unicycler_hyplas_modified/cpp_functions.so
 SHELL        = /bin/sh
-SOURCES      = $(shell find unicycler -name "*.cpp")
-HEADERS      = $(shell find unicycler -name "*.h")
+SOURCES      = $(shell find unicycler_hyplas_modified -name "*.cpp")
+HEADERS      = $(shell find unicycler_hyplas_modified -name "*.h")
 OBJECTS      = $(SOURCES:.cpp=.o)
 
 
