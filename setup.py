@@ -203,16 +203,16 @@ class UnicyclerToolCheck(Command):
         tool_check()
 
 
-setup(name='unicycler',
+setup(name='unicycler_hyplas_modified',
       version=__version__,
-      description='bacterial genome assembler for hybrid read sets',
+      description='bacterial genome assembler for hybrid read sets (modified for hyplas use)',
       long_description=LONG_DESCRIPTION,
       url='http://github.com/f0t1h/unicycler',
       author='Ryan Wick',
       author_email='rrwick@gmail.com',
       license='GPL',
-      packages=['unicycler'],
-      entry_points={"console_scripts": ['unicycler = unicycler.unicycler:main']},
+      packages=['unicycler_hyplas_modified'],
+      entry_points={"console_scripts": ['unicycler_hyplas_modified = unicycler_hyplas_modified.unicycler:main']},
       zip_safe=False,
       cmdclass={'install': UnicyclerInstall,
                 'clean': UnicyclerClean,
