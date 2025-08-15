@@ -15,7 +15,7 @@ details. You should have received a copy of the GNU General Public License along
 not, see <http://www.gnu.org/licenses/>.
 """
 
-from unicycler.unicycler import main
+from unicycler_hyplas_modified.unicycler import main
  
 if __name__ == '__main__':
     main()

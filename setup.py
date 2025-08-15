@@ -111,14 +111,14 @@ class UnicyclerInstall(install):
                 make_cmd += shlex.split(self.makeargs)
             self.execute(lambda: subprocess.call(make_cmd), [],
                          'Compiling Unicycler: ' + ' '.join(make_cmd))
-            cpp_code = os.path.join('unicycler', 'cpp_functions.so')
+            cpp_code = os.path.join('unicycler_hyplas_modified', 'cpp_functions.so')
             if not os.path.isfile(cpp_code):
                 sys.exit("Error: compilation of Unicycler's C++ component failed")
 
             install.run(self)
 
             # Copy non-Python stuff to the installation directory.
-            shutil.copyfile(cpp_code, os.path.join(self.install_lib, 'unicycler',
+            shutil.copyfile(cpp_code, os.path.join(self.install_lib, 'unicycler_hyplas_modified',
                                                    'cpp_functions.so'))
             gene_data_source_dir = os.path.join('unicycler_hyplas_modified', 'gene_data')
             gene_data_dest_dir = os.path.join(self.install_lib, 'unicycler_hyplas_modified', 'gene_data')
